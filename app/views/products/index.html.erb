@@ -1,0 +1,43 @@
+<div id="product-list">
+    <h1>Products</h1>
+
+    <table cellpadding="5" cellspacing="0">
+      <!--<thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Date Available</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>   -->
+
+      <tbody>
+      <%odd_or_even = 0
+         @products.each do |product|
+          odd_or_even=1 - odd_or_even%>
+          <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+            <td><img class="list-image" src="<%= product.image_url %>"/></td>
+            <td width="60%">
+              <span class="list-title"><%= h(product.title) %></span><br/>
+              <%= h(truncate(product.description, length:80)) %>
+            </td>
+            <td align="right">
+            <%= product.date_available.to_date %><br/>
+            <strong>$<%= sprintf("%0.2f",product.price)%> </strong>
+            <td class="list-actions">
+            <%= link_to 'Show', product %><br/>
+            <%= link_to 'Edit', edit_product_path(product) %><br/>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
