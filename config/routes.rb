@@ -2,6 +2,9 @@ Depot::Application.routes.draw do
   get "store/index"
   get "store/add_to_cart"
   get "store/display_cart"
+  get "store/empty_cart"
+  get "store/checkout"
+
   resources :products
   resources :store
   resources :cart

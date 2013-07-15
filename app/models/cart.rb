@@ -3,8 +3,12 @@ class Cart
   attr_reader :total_price
 
   def initialize
+    empty!
+  end
+
+  def empty!
     @items = []
-    @total_price = 0.0
+    @total_price =0.0
   end
 
   def add_product(product)

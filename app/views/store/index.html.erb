@@ -1,4 +1,9 @@
 <h1>Store</h1>
+
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <% for product in @products -%>
     <div class="entry">
       <%= image_tag(product.image_url) %>

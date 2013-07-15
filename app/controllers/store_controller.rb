@@ -3,6 +3,8 @@ class StoreController < ApplicationController
     @products = Product.salable_items
   end
 
+
+
   def add_to_cart
     product = Product.find(params[:id])
     @cart = find_cart
@@ -17,6 +19,33 @@ class StoreController < ApplicationController
   def display_cart
     @cart = find_cart
     @items = @cart.items
+    if @items.empty?
+      redirect_to_index("Your cart is empty")
+    end
+  end
+
+
+  def empty_cart
+    @cart = find_cart
+    @cart.empty!
+    redirect_to_index("Your cart is now empty")
+  end
+
+
+  def redirect_to_index(msg = nil)
+    flash[:notice] = msg if msg
+    redirect_to(:action => 'index')
+  end
+
+  def checkout
+    @cart = find_cart
+    @items = @cart.items
+    if @items.empty?
+      redirect_to_index("There's nothing to checkout in your cart!")
+    else
+      redirect_to_index("new order should have been created")
+      # @order= Order.new
+    end
   end
 
   private
