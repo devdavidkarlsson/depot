@@ -1,4 +1,15 @@
 <h1>Display Cart </h1>
-<p>
-Your cart contains <%= @items.size %> items.
-</p>
+<table>
+  <%
+  for item in @items
+    product = item.product
+    -%>
+   <tr>
+      <td><%= item.quantity %></td>
+      <td><%= h(product.title) %></td>
+      <td align="right"><%= item.unit_price %></td>
+      <td align="right"><%= item.unit_price * item.quantity %></td>
+      </tr>
+      <%end-%>
+
+      </table>
