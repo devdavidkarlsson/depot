@@ -1,0 +1,28 @@
+<tr valign="top">
+  <td class="olnamebox">
+    <div class="olname">
+      <font color="Black">Name:</font>
+      <%= h(order_line.name) %>
+      <br />
+
+      <font color="Black">Address:</font>
+      <%= h(order_line.address) %>
+    </div>
+
+  </td>
+
+  <td class="olitembox">
+    <% order_line.line_items.each do |li| %>
+        <div class="olitem">
+          <%= li.quantity %>
+          *
+          <%= li.product.title %>
+        </div>
+    <% end %>
+  </td>
+
+
+  <td>
+    <%= check_box("to_be_shipped",order_line.id,{},"yes","no") %>
+  </td>
+</tr>

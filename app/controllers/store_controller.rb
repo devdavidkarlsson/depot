@@ -61,7 +61,40 @@ class StoreController < ApplicationController
     end
   end
 
+  def ship
+    count = 0
+    if things_to_ship = params[:to_be_shipped]
+      count = do_ship(things_to_ship)
+      if count > 0
+        count_text = pluralize(count, "order")
+        flash.now[:notice] = "#{count} shipped"
+      end
+    end
+    @pending_orders = Order.pending_shipping
+  end
+
+
   private
+  def do_ship(things_to_ship)
+    count = 0
+    things_to_ship.each do |order_id, do_it|
+      if do_it =="yes"
+        order = Order.find(order_id)
+        order.mark_as_shipped
+        order.save
+        count += 1
+      end
+    end
+    count
+  end
+  def pluralize(count, noun)
+    case count
+      when 0 then "No #{noun.pluralize}"
+      when 1 then "One #{noun}"
+      else    "#{count} #{noun.pluralize}"
+    end
+  end
+
   def save_order_params
     # This says that params[:order] is required, but inside that, only params[:name][:email]... and params[:post][:body] are permitted
     # Unpermitted params will be stripped out
@@ -72,6 +105,7 @@ class StoreController < ApplicationController
   def find_cart
     session[:cart] ||= Cart.new
   end
+
 
 
 end

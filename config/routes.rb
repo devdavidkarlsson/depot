@@ -6,6 +6,8 @@ Depot::Application.routes.draw do
   get "store/checkout"
   get "store/save_order"
   post "store/save_order"
+  get "store/ship"
+  post "store/ship"
 
   resources :products
   resources :store

@@ -61,6 +61,8 @@ class ProductsController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -71,4 +73,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price, :date_available)
     end
+
+
 end
