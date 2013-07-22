@@ -10,8 +10,8 @@ Things you may want to cover:
 * Rails 4.0
 
 * Using gems: 
-   gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
-   and gem 'dynamic_form'
+    gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+    gem 'dynamic_form'
 
 
 * Database is sqlite3
