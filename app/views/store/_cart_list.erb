@@ -1,0 +1,26 @@
+<table cellpadding ="10" cellspacing="0">
+  <tr class="carttitle">
+
+    <td rowspan="2"><strong>Qty</strong></td>
+    <td rowspan="2"><strong>Description</strong></td>
+  </tr>
+  <tr class="carttitle">
+    <td><strong>Each</strong></td>
+    <td><strong>Total</strong></td>
+  </tr>
+  <%
+     for item in @items
+       product = item.product
+  -%>
+      <tr>
+        <td><%= item.quantity %></td>
+        <td><%= h(product.title) %></td>
+        <td align="right"><%= number_to_currency(item.unit_price) %></td>
+        <td align="right"><%= number_to_currency(item.unit_price * item.quantity) %></td>
+      </tr>
+  <%end-%>
+  <tr>
+    <td colspan="3" align ="right"><strong>Total:</strong></td>
+    <td id="totalcell"><%=number_to_currency(@cart.total_price)%></td>
+  </tr>
+</table>

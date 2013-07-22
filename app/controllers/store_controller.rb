@@ -50,11 +50,12 @@ class StoreController < ApplicationController
 
   def save_order
     @cart = find_cart
+    @items = @cart.items
     @order = Order.new( save_order_params )
     @order.line_items << @cart.items
     if @order.save
       @cart.empty!
-      redirect_to_index('Thank you for your order.')
+      redirect_to_index('Thank you for your order ' + @order.name+'.')
     else
       render(:action => 'checkout')
     end

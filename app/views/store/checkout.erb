@@ -1,6 +1,12 @@
 <% @page_title = "Checkout"  -%>
 <%= error_messages_for 'order' %>
+
+
+
+
+
 <%= form_tag( :action => "save_order") %>
+<%= render 'cart_list' %>
 <table>
     <tr>
       <td>Name:</td>

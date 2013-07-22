@@ -40,6 +40,11 @@ gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 #Use dynamic forms for errors:
 gem 'dynamic_form'
+
+#Render:
+gem 'railties'
+#gem 'render_component'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
