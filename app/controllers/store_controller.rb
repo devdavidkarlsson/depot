@@ -43,12 +43,31 @@ class StoreController < ApplicationController
     if @items.empty?
       redirect_to_index("There's nothing to checkout in your cart!")
     else
-      redirect_to_index("new order should have been created")
-      # @order= Order.new
+      #redirect_to_index("new order should have been created")
+       @order= Order.new
+    end
+  end
+
+  def save_order
+    @cart = find_cart
+    @order = Order.new( save_order_params )
+    @order.line_items << @cart.items
+    if @order.save
+      @cart.empty!
+      redirect_to_index('Thank you for your order.')
+    else
+      render(:action => 'checkout')
     end
   end
 
   private
+  def save_order_params
+    # This says that params[:order] is required, but inside that, only params[:name][:email]... and params[:post][:body] are permitted
+    # Unpermitted params will be stripped out
+    params.require(:order).permit(:name, :email, :address, :city, :pay_type)
+  end
+
+
   def find_cart
     session[:cart] ||= Cart.new
   end

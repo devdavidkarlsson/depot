@@ -4,10 +4,13 @@ Depot::Application.routes.draw do
   get "store/display_cart"
   get "store/empty_cart"
   get "store/checkout"
+  get "store/save_order"
+  post "store/save_order"
 
   resources :products
   resources :store
   resources :cart
+  resources :order
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

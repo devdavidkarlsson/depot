@@ -38,6 +38,8 @@ end
 #Use active record session store for session
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
+#Use dynamic forms for errors:
+gem 'dynamic_form'
 # Use unicorn as the app server
 # gem 'unicorn'
 

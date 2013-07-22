@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130715140329) do
+ActiveRecord::Schema.define(version: 20130721165810) do
 
   create_table "line_items", force: true do |t|
     t.integer  "product_id"
     t.integer  "quantity"
     t.decimal  "unit_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "order_id"
+  end
+
+  create_table "orders", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "address"
+    t.string   "city"
+    t.string   "pay_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
