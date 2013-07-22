@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51956eda-fac3-4281-a4ce-309c5eef3e69" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/store/_cart_list.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/store/checkout.erb" afterPath="$PROJECT_DIR$/app/views/store/checkout.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/store/display_cart.erb" afterPath="$PROJECT_DIR$/app/views/store/display_cart.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/store_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/store_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="51956eda-fac3-4281-a4ce-309c5eef3e69" name="Default" comment="" />
     <ignored path="depot.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="51956eda-fac3-4281-a4ce-309c5eef3e69" time="1374424573422" ignored="false" />
@@ -74,7 +66,7 @@
       <file leaf-file-name="store_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/store_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="68" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.51960784">
+            <state line="57" column="68" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.5686275">
               <folding />
             </state>
           </provider>
@@ -804,7 +796,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/store_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="68" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.51960784">
+        <state line="57" column="68" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.5686275">
           <folding />
         </state>
       </provider>
